@@ -13,3 +13,8 @@ api used in this project
 				5. View system supporting 14+ template engines
 				6. Content negotiation
 				7. Executable for generating applications quickly
+				
+	..mongoose api ::
+				1. connect with mongo client
+				
+	
