@@ -1,0 +1,25 @@
+{
+  "name": "nodeapi",
+  "version": "1.0.0",
+  "description": "api created on node ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayantankhan/nodeapi.git"
+  },
+  "author": "Sayantan Khan <iamstk14@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sayantankhan/nodeapi/issues"
+  },
+  "homepage": "https://github.com/Sayantankhan/nodeapi#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"  
+  }
+}
