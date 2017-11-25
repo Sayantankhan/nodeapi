@@ -1,7 +1,12 @@
 'use strict';
 
+// logger added
+var logobj = require('../../config/loggerConfig');
+const logger = logobj.getLogger('apiworking');
+
 module.exports = function(app){
   var controller = require('../controller/dbhandler');
+  logger.trace("app in route Section");
 
   app.route('/findData')
     .get(controller.list_all_data);

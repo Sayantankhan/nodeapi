@@ -5,8 +5,12 @@ var mongoose = require("mongoose");
 var bodyparser = require('body-parser');
 var apiroute = require('./api/routes/apiroute');
 var bodyParser = require('body-parser');
+var configReader = require('./resources/configFileReader');
+// logger added
+var logobj = require('./config/loggerConfig');
+const logger = logobj.getLogger('apiworking');
 
-
+//====================================== Binding mongoDb ==================================
 var options = {
   useMongoClient: true,
   autoIndex: false, // Don't build indexes
@@ -19,16 +23,19 @@ var options = {
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/sayantan',options,function(error){
-  console.error.bind(console, 'connection error:');
-	console.log("error in connection: "+error);
-});
+mongoose.connect(configReader.mongoUrl+configReader.mongoDb,options,function(data){})
+  .catch(function(err){
+    console.error.bind(console, 'connection error:');
+  	console.log("error in connection: "+err);
+    logger.error("error in connection: "+err);
+  })
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 apiroute(app);
 
-app.listen(port);
+//========================================== Run the Server ===============================
+app.listen(configReader.http_port);
 
-console.log(`starting a node api: ${port}`);
+console.log(`starting a node api: ${configReader.http_port}`);

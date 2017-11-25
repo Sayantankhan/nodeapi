@@ -18,3 +18,12 @@ api used in this project
 				1. connect with mongo client
 				
 	
+	..node-yaml api :: 
+				1. used for parsing  .yml config files
+				
+	..node-yaml-config ::
+				1. yml config file 
+				
+	..log4js api ::
+				1. for log maintain
+				
