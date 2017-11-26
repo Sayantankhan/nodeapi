@@ -1,6 +1,7 @@
 'use strict'
 var mongoose = require('mongoose');
 var schema = mongoose.Schema;
+
 // logger added
 var logobj = require('../../config/loggerConfig');
 const logger = logobj.getLogger('apiworking');
