@@ -1,2 +1,13 @@
 
 [2017-11-25T13:43:58.929] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T12:44:22.762] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:28:26.480] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:31:46.914] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:32:45.259] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:39:26.362] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:39:44.057] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:40:15.581] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:41:15.017] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T13:41:24.554] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T15:22:13.137] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+[2017-11-26T15:23:07.286] [ERROR] apiworking - error in connection: MongoError: failed to connect to server [localhost:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]

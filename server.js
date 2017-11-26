@@ -9,6 +9,24 @@ var configReader = require('./resources/configFileReader');
 // logger added
 var logobj = require('./config/loggerConfig');
 const logger = logobj.getLogger('apiworking');
+// helmet added
+var helmet = require('helmet');
+//config and testing
+//const morgan = require('morgan');
+const expressValidator = require('express-validator');
+const config = require('config');
+
+//========================================================================================
+
+// helmet config
+app.use(helmet());
+app.use(helmet.noCache());
+app.use(helmet({
+  frameguard: false
+}));
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //====================================== Binding mongoDb ==================================
 var options = {
@@ -18,21 +36,36 @@ var options = {
   reconnectInterval: 500, // Reconnect every 500ms
   poolSize: 10, // Maintain up to 10 socket connections
   // If not connected, return errors immediately rather than waiting for reconnect
-  bufferMaxEntries: 0
+  bufferMaxEntries: 0,
+  server: {
+        socketOptions: {
+            keepAlive: 1,
+            connectTimeoutMS: 30000
+        }
+    }
 };
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect(configReader.mongoUrl+configReader.mongoDb,options,function(data){})
+console.log(config.DBHost);
+mongoose.connect(config.DBHost,options,function(data){})
   .catch(function(err){
     console.error.bind(console, 'connection error:');
   	console.log("error in connection: "+err);
     logger.error("error in connection: "+err);
   })
+//================================================================================================
+if(config.util.getEnv('NODE_ENV') !== 'prod' ){
+    logger.trace("in development/testing mode")
+    require('dotenv').load();
+}
+else{
+  logger.trace("in PRODUCTION...");
+}
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+console.log(process.env.animal);
 
+app.use(expressValidator());
 apiroute(app);
 
 //========================================== Run the Server ===============================
